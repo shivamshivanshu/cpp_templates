@@ -1,0 +1,31 @@
+CompileFlags:
+  Compiler: clang++
+  Add:
+    - -std=c++23
+    - -DLOCAL_JUDGE
+    - -I.
+    - -include
+    - stdc++.h
+    - -Wall
+    - -Wextra
+    - -Wshadow
+    - -Wno-unused-const-variable
+    - -Wno-unused-function
+
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
+  ClangTidy:
+    Add:
+      - bugprone-*
+      - performance-*
+    Remove:
+      - bugprone-easily-swappable-parameters
+      - bugprone-narrowing-conversions
+      - bugprone-macro-parentheses
+
+InlayHints:
+  Enabled: false
+
+Hover:
+  ShowAKA: true
