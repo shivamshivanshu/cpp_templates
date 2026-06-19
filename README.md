@@ -1,16 +1,24 @@
 # Competitive Programming Templates
 
-Personal C++ competitive-programming workspace. Clone, and start solving.
+Personal C++ competitive-programming workspace. Clone, then:
+
+```sh
+make reset      # create main.cpp from the template (it is gitignored)
+make run        # build and run
+```
+
+`main.cpp` and `io/input.txt` are gitignored (per-problem scratch); the
+tracked source of truth lives in `templates/template.cpp`.
 
 ## Layout
 
 ```
-main.cpp              # scratch file you edit per problem
+main.cpp              # scratch file you edit per problem (gitignored)
 templates/
   template.cpp        # pristine base template (source of truth)
 stdc++.h              # local precompiled-header source (libc++ has no <bits/stdc++.h>)
 io/
-  input.txt           # stdin  (read under LOCAL_JUDGE)
+  input.txt           # stdin  (read under LOCAL_JUDGE; gitignored)
   output.txt          # stdout (written under LOCAL_JUDGE; gitignored)
 Makefile
 .clangd               # editor (clangd) config, kept in sync with the Makefile

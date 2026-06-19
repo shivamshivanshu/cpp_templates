@@ -40,10 +40,13 @@ RELFLAGS  := $(STD) -O2 $(EXTRA)
 
 .PHONY: all run release reset clean clean_all
 
-all: $(PCH_OUT)
+all: $(PCH_OUT) io/input.txt
 	@echo "\n[[INFO]] Building $(FILE) with $(notdir $(CXX)) ...\n"
 	$(CXX) $(DBGFLAGS) -include-pch $(PCH_OUT) $(FILE) -o $(OUT)
 	@echo "\n[[INFO]] Finished -> ./$(OUT)\n"
+
+io/input.txt:
+	@mkdir -p io && touch io/input.txt
 
 $(PCH_OUT): $(PCH_SRC) Makefile
 	@echo "\n[[INFO]] Precompiling headers...\n"
